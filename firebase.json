@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/AtriaNotification",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

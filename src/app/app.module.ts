@@ -12,6 +12,10 @@ import { environment } from 'src/environments/environment';
 import { NotificationComponent } from './notifications/notification/notification.component';
 import { NotificationListComponent } from './notifications/notification-list/notification-list.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFireMessaging, AngularFireMessagingModule } from '@angular/fire/messaging';
+
+import { AsyncPipe } from '../../node_modules/@angular/common';
+import { MessagingService } from './shared/messaging.service';
 
 
 
@@ -27,9 +31,12 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireMessagingModule,
+   ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+  //  ServiceWorkerModule.register('/combined-worker.js', { enabled: environment.production })
+
   ],
-  providers: [NotificationsService],
+  providers: [MessagingService,AsyncPipe,NotificationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
