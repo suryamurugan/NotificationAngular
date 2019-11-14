@@ -11,6 +11,8 @@ import {AngularFirestoreModule, AngularFirestore} from "@angular/fire/firestore"
 import { environment } from 'src/environments/environment';
 import { NotificationComponent } from './notifications/notification/notification.component';
 import { NotificationListComponent } from './notifications/notification-list/notification-list.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { NotificationListComponent } from './notifications/notification-list/not
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestorerModule
+    AngularFirestoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [NotificationsService],
   bootstrap: [AppComponent]
