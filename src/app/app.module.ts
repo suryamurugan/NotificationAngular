@@ -16,6 +16,13 @@ import { AngularFireMessaging, AngularFireMessagingModule } from '@angular/fire/
 
 import { AsyncPipe } from '../../node_modules/@angular/common';
 import { MessagingService } from './shared/messaging.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule } from  '@angular/material';
+import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
+
+
+
 
 
 
@@ -29,14 +36,24 @@ import { MessagingService } from './shared/messaging.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireMessagingModule,
    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+   BrowserAnimationsModule,
   //  ServiceWorkerModule.register('/combined-worker.js', { enabled: environment.production })
 
   ],
   providers: [MessagingService,AsyncPipe,NotificationsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }

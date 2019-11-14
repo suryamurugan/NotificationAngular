@@ -1,22 +1,19 @@
 <!-- <h3> {{ message | async | json }} </h3>
  -->
- <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <!-- <a class="nav-link active" href="#">Notifications</a> -->
-      <h4>NoO</h4>
-    </li>
-    <!-- <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Link</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li> -->
-  </ul>
+ <mat-toolbar color="white" style="justify-content: center;background-color: white;"> <h1 class="mat-display-1">Notifications</h1>
+ </mat-toolbar>
+
 <div class="container">
+  
   <div class="row">
    <app-notifications></app-notifications>
   </div>
 </div>
+
+<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+
+
+  <!-- 
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button> -->
