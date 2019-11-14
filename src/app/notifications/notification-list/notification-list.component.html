@@ -1,0 +1,13 @@
+<table class="table table-hover">
+        <thead>
+          <th>Name</th>
+          
+          <th></th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of list">
+            <td (click)="onEdit(emp)">{{emp.title}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
