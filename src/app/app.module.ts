@@ -18,7 +18,7 @@ import { AsyncPipe } from '../../node_modules/@angular/common';
 import { MessagingService } from './shared/messaging.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule,MatCardModule,MatExpansionModule } from  '@angular/material';
 import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
 
 
@@ -43,6 +43,8 @@ import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
     MatButtonModule,
     MatIconModule,
     MatMenuModule,
+    MatCardModule,
+    MatExpansionModule,
     
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
