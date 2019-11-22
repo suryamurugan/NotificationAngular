@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { NotificationsService } from "./shared/notifications.service";
@@ -18,11 +18,26 @@ import { AsyncPipe } from '../../node_modules/@angular/common';
 import { MessagingService } from './shared/messaging.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule,MatCardModule,MatExpansionModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule,MatCardModule,MatExpansionModule,MatTabsModule } from  '@angular/material';
 import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 
-
+/* 
+const appRoutes: Routes = [
+  { path: 'crisis-center', component: CrisisListComponent },
+  { path: 'hero/:id',      component: HeroDetailComponent },
+  {
+    path: 'heroes',
+    component: HeroListComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/heroes',
+    pathMatch: 'full'
+  },
+  { path: '**', component: PageNotFoundComponent }
+]; */
 
 
 
@@ -31,7 +46,8 @@ import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
     AppComponent,
     NotificationsComponent,
     NotificationComponent,
-    NotificationListComponent
+    NotificationListComponent,
+    routingComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +61,13 @@ import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
     MatMenuModule,
     MatCardModule,
     MatExpansionModule,
-    
+    MatTabsModule,
+
+ /*    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+     */
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireMessagingModule,
@@ -59,3 +81,4 @@ import {  CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule { }
+
